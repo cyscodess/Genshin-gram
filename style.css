@@ -9,23 +9,130 @@
 html {
     font-size: 62.5%;
     font-family: 'Open Sans', sans-serif;
+    color: #2b283a;
 }
 
 /* Layout */
 
+.container {
+    border: 0.5rem solid #2b283a;
+    border-radius: 2rem;
+    max-width: 700px;
+    min-width: 500px;
+    width: 50vw;
+    margin: 3rem auto;
+    display: block;
+    overflow: hidden;
+    box-shadow: 0px -1px 36px -14px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px -1px 36px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -1px 36px -14px rgba(0,0,0,0.75);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.2rem solid #e5e5e5;
+    margin-bottom: 1rem;
+}
+
+header,
+main {
+    padding: 1em 2em;
+}
+
+.post-top-label {
+    display: inline-flex;
+}
+
+.post-user-info {
+    flex-direction: column;    
+}
+
+.post-top-label, 
+.user-img-post {
+    margin-bottom: 1rem;
+}
+
+.interact-btn,
+.post-likes {
+    margin-bottom: 0.5rem;
+}
+
+.user-post {
+    margin-bottom: 4rem;
+}
 
 /* Links */
+a {
+    text-decoration: none;
+    color: #2b283a;
+}
+
+a:hover {
+    filter: drop-shadow(0px 0px 1px #34dbcd);
+}
+
+.post-caption-user {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2b283a;
+}
 
 
 /* Buttons */
+.post-btn {
+    width: 30px;
+    height: 30px;
+    vertical-align: center;
+    margin-right: 0.6rem;
+}
+
+.post-btn:active {
+    width: 29px;
+    height: 29px;
+    vertical-align: center;
+    text-align: center;
+}
+
+.profile-btn:hover {
+    opacity: 0.8;
+}
+
+.post-btn:hover {
+    filter: drop-shadow(0px 0px 2px #34dbcd);
+}
 
 
 /* Typography */
 
 h1 {
     font-family: 'Pacifico', sans-serif;
+    font-size: 3rem;
 }
 
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+.post-caption-comment {
+    font-size: 2rem;
+}
+
+.app-name {
+    color: #4daca4;
+}
+
+.post-caption {
+    display: flex;
+    align-items: baseline;
+}
+
+
+/* Images */
 .profile-btn {
     background-image: url('photos/xiao-dp.jpg');
     background-size: 120%;
@@ -35,3 +142,31 @@ h1 {
     border-radius: 100%;
 }
 
+.user-avatar {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.user-img-post {
+    object-fit: cover;
+    object-position: center center;
+    height: 100%;
+    width: 100%;
+    min-width: 700px;
+    min-height: 700px;
+    padding: 0;
+    margin-left: -2rem;
+    margin-right: -2rem;
+}
+
+.post-user-img-container {
+    background: #fff;
+    overflow: hidden;
+}
+
+.post-user-img-container:hover .user-avatar {
+    opacity: 0.8;
+}

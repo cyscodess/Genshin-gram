@@ -1,30 +1,39 @@
 const posts = [
     {
-        name: "Vincent van Gogh",
-        username: "vincey1853",
-        location: "Zundert, Netherlands",
-        avatar: "images/avatar-vangogh.jpg",
-        post: "images/post-vangogh.jpg",
-        comment: "just took a few mushrooms lol",
+        name: "Barbatos",
+        username: "venti616",
+        location: "Mondstadt Cathedral",
+        avatar: "photos/venti-dp.jpg",
+        post: "photos/venti-post.jpg",
+        comment: "Fly, fly away, Like a bird in the sky.",
         likes: 21
     },
     {
-        name: "Gustave Courbet",
-        username: "gus1819",
-        location: "Ornans, France",
-        avatar: "images/avatar-courbet.jpg",
-        post: "images/post-courbet.jpg",
-        comment: "i'm feelin a bit stressed tbh",
+        name: "Morax",
+        username: "zhongli1231",
+        location: "Third-Round Knockout, Liyue",
+        avatar: "photos/zhongli-dp.jpg",
+        post: "photos/zhongli-post.jpg",
+        comment: "Osmanthus wine tastes the same as I remember... but where are those who share the memory?",
         likes: 4
     },
-        {
-        name: "Joseph Ducreux",
-        username: "jd1735",
-        location: "Paris, France",
-        avatar: "images/avatar-ducreux.jpg",
-        post: "images/post-ducreux.jpg",
-        comment: "gm friends! which coin are YOU stacking up today?? post below and WAGMI!",
+    {
+        name: "Baal",
+        username: "raiden0626",
+        location: "Narukami Shrine, Inazuma",
+        avatar: "photos/raiden-dp.jpg",
+        post: "photos/raiden-post.jpg",
+        comment: "With you by my side, though our mouths stay silent, my heart is at peace.",
         likes: 152
+    },
+    {
+        name: "Kusanali",
+        username: "nahida1027",
+        location: "Sumeru jungle",
+        avatar: "photos/nahida-dp.jpg",
+        post: "photos/nahida-post.jpg",
+        comment: "If you're not sure what to do next, how about I take you on a walk?",
+        likes: 238
     }
 ]
 
@@ -32,26 +41,42 @@ let mainFeed = document.getElementById("main-feed")
 
 let userPostHtml = ``
 
-for (let post of posts) {
-    userPostHtml += `
-        <div class="user-post">
-            <img src="${post.avatar}" alt="user profile photo">
-            <h4 class="user-label">${post.name}</h4>
-            <h5 class="user-location">${post.location}</h5>
-            <img src="${post.post}" alt="user post">
-            <div class="interact-btn">
-                <img src=# alt="like button">
-                <img src=# alt="comment button">
-                <img src=# alt="direct message button">
+function renderPosts() {
+    for (let post of posts) {
+        userPostHtml += `
+            <div class="user-post">
+                <div class="post-top-label">
+                    <div class="post-user-img-container">
+                        <img src="${post.avatar}" alt="user profile photo" class="user-avatar">
+                    </div>
+                    <div class="post-user-info">
+                        <h4 class="user-label">${post.name}</h4>
+                        <h5 class="user-label">${post.location}</h5>
+                    </div>
+                </div>
+                <img src="${post.post}" alt="user post" class="user-img-post">
+                <div class="interact-btn">
+                    <img src="photos/like.png" alt="like button" class="post-btn like-btn" id="like-btn" onclick="clickLike()">
+                    <img src="photos/comment.png" alt="comment button" class="post-btn comment-btn">
+                    <img src="photos/dm.png" alt="direct message button" class="post-btn dm-btn">
+                </div>
+                <h4 class="user-label post-likes" id="likes-display">${post.likes} likes</h4>
+                <div class="post-caption">
+                    <h3 class="post-caption-user"></h3>
+                    <p class="post-caption-comment"><a href="#" class="post-caption-user">${post.username}</a> ${post.comment}</p>
+                </div>
             </div>
-            <h4 class="user-label">${post.likes}</h4>
-            <div class="post-caption">
-                <h3>${post.username}</h3>
-                <p>${post.comment}</p>
-            </div>
-            <p>${post.name}</p>
-        </div>
-        `
+            `
+    }
+    
+    mainFeed.innerHTML = userPostHtml
 }
 
-mainFeed.innerHTML = userPostHtml
+renderPosts()
+
+// When Clicking Like
+
+function clickLike(){
+    
+}
+
