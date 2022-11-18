@@ -56,11 +56,11 @@ function renderPosts() {
                 </div>
                 <img src="${post.post}" alt="user post" class="user-img-post">
                 <div class="interact-btn">
-                    <img src="photos/like.png" alt="like button" class="post-btn like-btn" id="like-btn" onclick="clickLike()">
+                    <img src="photos/like.png" alt="like button" class="post-btn like-btn" onclick="clickLike()">
                     <img src="photos/comment.png" alt="comment button" class="post-btn comment-btn">
                     <img src="photos/dm.png" alt="direct message button" class="post-btn dm-btn">
                 </div>
-                <h4 class="user-label post-likes" id="likes-display">${post.likes} likes</h4>
+                <h4 class="user-label post-likes">${post.likes} likes</h4>
                 <div class="post-caption">
                     <h3 class="post-caption-user"></h3>
                     <p class="post-caption-comment"><a href="#" class="post-caption-user">${post.username}</a> ${post.comment}</p>
