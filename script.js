@@ -42,7 +42,7 @@ let mainFeed = document.getElementById("main-feed")
 let userPostHtml = ``
 
 function renderPosts() {
-    for (let post of posts) {
+    posts.forEach(function(post) {
         userPostHtml += `
             <div class="user-post">
                 <div class="post-top-label">
@@ -67,7 +67,7 @@ function renderPosts() {
                 </div>
             </div>
             `
-    }
+    })
     
     mainFeed.innerHTML = userPostHtml
 }
