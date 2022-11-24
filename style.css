@@ -12,11 +12,16 @@ html {
     color: #2b283a;
 }
 
+body {
+    background-color: #e1fcf9;
+}
+
 /* Layout */
 
 .container {
     border: 0.5rem solid #2b283a;
     border-radius: 2rem;
+    background-color: #fff;
     max-width: 700px;
     min-width: 500px;
     width: 50vw;
@@ -63,7 +68,7 @@ main {
 }
 
 .post-reply {
-    display: none;
+    display: flex;
     width: 100%;
     padding-top: 1.5em;
     padding-left: 2em;

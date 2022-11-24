@@ -48,13 +48,10 @@ let mainFeed = document.getElementById("main-feed")
 document.addEventListener("click", function(e){
     if (e.target.dataset.like) {
         clickLike(e.target.dataset.like)
-    } else if (e.target.id) {
-        if (document.querySelector(".post-reply").style.display !== "inline-flex") {
-            document.querySelector(".post-reply").style.display = "inline-flex"
-        } else {
-            document.querySelector(".post-reply").style.display = "none"
-        }
-    }
+    } 
+    // else if (e.target.id) {
+    //     clickReply(e.target.id)
+    // }
 })
 
 function clickLike(userId){
@@ -107,7 +104,7 @@ function renderPosts() {
                     <h3 class="post-caption-user"></h3>
                     <p class="post-caption-comment"><a href="#" class="post-caption-user">${post.username}</a> ${post.comment}</p>
                 </div>
-                <div class="post-reply">
+                <div class="post-reply"">
                     <img src="photos/xiao-dp.jpg" alt="user profile photo" class="reply-avatar">
                     <textarea placeholder="Write your comment"></textarea>
                 </div>
