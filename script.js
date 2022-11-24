@@ -43,11 +43,17 @@ const posts = [
 
 let mainFeed = document.getElementById("main-feed")
 
-// When Clicking Like
+// When clicking the like or reply icons
 
 document.addEventListener("click", function(e){
     if (e.target.dataset.like) {
         clickLike(e.target.dataset.like)
+    } else if (e.target.id) {
+        if (document.querySelector(".post-reply").style.display !== "inline-flex") {
+            document.querySelector(".post-reply").style.display = "inline-flex"
+        } else {
+            document.querySelector(".post-reply").style.display = "none"
+        }
     }
 })
 
@@ -93,13 +99,17 @@ function renderPosts() {
                 <img src="${post.post}" alt="user post" class="user-img-post" data-post="${post.post}">
                 <div class="interact-btn">
                     <i class="${likeIconClass} fa-heart fa-3x like-btn" data-like="${post.username}"></i>
-                    <i class="fa-regular fa-comment fa-3x"></i>
+                    <i class="fa-regular fa-comment fa-3x" id="reply-${post.username}"></i>
                     <i class="fa-regular fa-paper-plane fa-3x"></i>
                 </div>
                 <h4 class="user-label post-likes">${post.likes} likes</h4>
                 <div class="post-caption">
                     <h3 class="post-caption-user"></h3>
                     <p class="post-caption-comment"><a href="#" class="post-caption-user">${post.username}</a> ${post.comment}</p>
+                </div>
+                <div class="post-reply">
+                    <img src="photos/xiao-dp.jpg" alt="user profile photo" class="reply-avatar">
+                    <textarea placeholder="Write your comment"></textarea>
                 </div>
             </div>
             `

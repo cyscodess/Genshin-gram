@@ -62,6 +62,13 @@ main {
     margin-bottom: 4rem;
 }
 
+.post-reply {
+    display: none;
+    width: 100%;
+    padding-top: 1.5em;
+    padding-left: 2em;
+}
+
 /* Links */
 a {
     text-decoration: none;
@@ -131,8 +138,25 @@ h5 {
     align-items: baseline;
 }
 
+/* Textarea */
+
+textarea {
+    border: 0;
+    resize: none;
+    width: 80%;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0.5em;
+    color: #2b283a;
+}
+
+textarea:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px #34dbcd;
+}
 
 /* Images */
+
 .profile-btn {
     background-image: url('photos/xiao-dp.jpg');
     background-size: 120%;
@@ -142,12 +166,21 @@ h5 {
     border-radius: 100%;
 }
 
-.user-avatar {
+.user-avatar,
+.reply-avatar {
     object-fit: cover;
-    width: 50px;
-    height: 50px;
     border-radius: 100%;
     margin-right: 10px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.reply-avatar {
+    width: 40px;
+    height: 40px;
 }
 
 .user-img-post {
